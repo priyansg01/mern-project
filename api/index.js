@@ -18,3 +18,13 @@ app.listen(3000,()=>{
 
 app.use('/api/user',router);
 app.use('/api/auth',authroute);
+
+app.use((err,rea,res,next)=>{
+    const statuscode=err.statuscode||500;
+    const  message=err.message||'Internal server error';
+    return res.status(statuscode).json({
+        success:false,
+        statuscode,
+        message,
+    })
+})
