@@ -19,6 +19,7 @@ app.listen(3000,()=>{
 app.use('/api/user',router);
 app.use('/api/auth',authroute);
 
+
 //middleware that handle a error
 app.use((err,req,res,next)=>{
     const statuscode=err.statuscode||500;
