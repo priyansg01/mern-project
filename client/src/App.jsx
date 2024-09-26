@@ -10,6 +10,7 @@ import Signup from './pages/Signup'
 import PrivateRoute from './component/PrivateRoute'
 import CreateListing from './pages/CreateListing'
 
+
 export default function App() {
   return <BrowserRouter>
   <Header/>
