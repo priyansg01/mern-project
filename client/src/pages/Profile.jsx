@@ -9,6 +9,7 @@ import { deleteUserStart,deleteUserSuccess,deleteUserFailure } from '../redux/us
 import { signInStart,signoutuserSuccess,signoutuserFailure } from '../redux/user/userSlice';
 import {Link} from 'react-router-dom'
 import Listing from '../../../api/models/listing.model';
+import UpdateListing from './UpdateListing';
 
 export default function Profile() {
   const {currentUser,loading,error} = useSelector(state=>state.user)
@@ -221,7 +222,10 @@ export default function Profile() {
                   
                   <div className="flex flex-col items-center">
                         <button onClick={()=>handleListingDelete(listing._id)} className='text-rose-700 uppercase '>delete</button>
-                        <button className='text-green-700 uppercase'>edit</button>
+
+                        <Link to={`/update-listing/${listing._id}`}>
+                            <button className='text-green-700 uppercase'>edit</button>
+                        </Link>
                   </div>
  
               </div>
